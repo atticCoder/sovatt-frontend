@@ -115,23 +115,24 @@ function ChatScreen({userId}) {
     };
   
     const fetchReplyFromAPI = async (transformed_messages) => {
-      try {
-        // Example API call
-        const operation = await get({apiName: "askkrishna", path: "/prod", options: {
-            queryParams: {
-              message: encodeURIComponent(JSON.stringify(transformed_messages))
-            }
-        }});
+      // try {
+      //   // Example API call
+      //   const operation = await get({apiName: "askkrishna", path: "/prod", options: {
+      //       queryParams: {
+      //         message: encodeURIComponent(JSON.stringify(transformed_messages))
+      //       }
+      //   }});
       
-        const responseData = await operation.response;
+      //   const responseData = await operation.response;
 
-        // Assuming the Lambda returns JSON, parse it
-        const data = await responseData.body.json();
-        return data.message;
-      } catch (error) {
-        console.error('There was a problem with your fetch operation: ', error.message);
-        return "Sorry, there is some technical problem on our end, please try again later"; // Fallback message
-      }
+      //   // Assuming the Lambda returns JSON, parse it
+      //   const data = await responseData.body.json();
+      //   return data.message;
+      // } catch (error) {
+      //   console.error('There was a problem with your fetch operation: ', error.message);
+      //   return "Sorry, there is some technical problem on our end, please try again later"; // Fallback message
+      // }
+      return "We are down for maintainence, please check back later."; // Fallback message
     };
   
     const sendMessage = async (e) => {
